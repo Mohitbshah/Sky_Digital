@@ -4,7 +4,7 @@ import PageObject.SignInPage;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class StepDefs_SignInPage extends Utils {
+public class StepDefs_SignInPage {
     SignInPage signInPage = new SignInPage();
 
     @When("^I click on sign in$")

@@ -4,7 +4,7 @@ import PageObject.DealsPage;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class StepDefs_DealsPage extends Utils {
+public class StepDefs_DealsPage {
     DealsPage dealsPage = new DealsPage();
 
     @When("^I click on Deals$")
@@ -30,7 +30,5 @@ public class StepDefs_DealsPage extends Utils {
     @Then("^I see a list of deals with a price to it$")
     public void i_see_a_list_of_deals_with_a_price_to_it(){
         dealsPage.dealsWithThePrice();
-//        dealsPage.assertDeals();
-
     }
 }

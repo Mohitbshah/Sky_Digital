@@ -16,8 +16,8 @@ public class HomePage extends Utils {
     public void acceptCookies(){
         try {
             driver.switchTo().frame("sp_message_iframe_474555");
-            Utils.waitForElementClickable(_acceptcookies, 15);
-            driver.findElement(_acceptcookies).click();
+            Utils.waitForElementClickable(_acceptcookies, 20);
+            clickElementBy(_acceptcookies);
             driver.switchTo().defaultContent();
         } catch (Exception e) {
             System.out.println("Cookies pop up is not visible");

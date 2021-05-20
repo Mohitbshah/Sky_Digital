@@ -1,6 +1,5 @@
 package PageObject;
 
-
 import com.sky.test.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
-
 
 public class DealsPage extends Utils {
     JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -30,28 +28,27 @@ public class DealsPage extends Utils {
         assertURL("https://www.sky.com/deals");
     }
     public void ableToSeeAllProductsOfSkyDeals(){
-       // getTextFromElement(_assertSkyDeals);
         assertTextMessage("Sky Deals",_assertSkyDeals);
     }
     public void tvFunctionalityUsability(){
-        waitForElementDisplay(_tvDealsVisible,5);
+        waitForElementDisplay(_tvDealsVisible,10);
         assertTextMessage("TV Deals",_tvDealsVisible);
     }
     public void tvAndBroadbandUsability(){
         clickElementBy(_tvAndBroadband);
-        waitForElementDisplay(_tvAndBroadbandDealsVisible,5);
+        waitForElementDisplay(_tvAndBroadbandDealsVisible,10);
         assertURL("https://www.sky.com/deals/tvandbroadband");
         assertTextMessage("TV & Broadband Deals",_tvAndBroadbandDealsVisible);
     }
     public void mobileFunctionalityUsability(){
         clickElementBy(_mobile);
-        waitForElementDisplay(_mobileDealsVisible,5);
+        waitForElementDisplay(_mobileDealsVisible,10);
         assertURL("https://www.sky.com/deals/mobile");
         assertTextMessage("Mobile Deals",_mobileDealsVisible);
     }
     public void dealsWithThePrice(){
         jse.executeScript("window.scrollBy(0,100)","");
-        waitForElementDisplay(_dealsPricesLoop,5);
+        waitForElementDisplay(_dealsPricesLoop,10);
         List<WebElement> tvDeals = driver.findElements(_dealsPricesLoop);
         System.out.println("The Total TV Deals are Displayed: " + tvDeals.size());
         String totalTvDeals = String.valueOf(tvDeals.size());
@@ -67,6 +64,5 @@ public class DealsPage extends Utils {
         String[] expect = {"\n£25","\n£41","\n£37","\n£58","\n£31","\n£25"};
         List<String> expectedPrice = Arrays.asList(expect);
         assertEquals(list,expectedPrice);
-
     }
 }
